@@ -1,6 +1,7 @@
 import mqttCredentials from './credentials';
 
-
+// IMPORTANT: Pins to be indicated by their physical pin number
+// Use
 const config = {
   global: {
     modules: {
@@ -11,20 +12,27 @@ const config = {
       //     pin: 600,
       //   },
       // },
-      dht: {
-        prettyName: 'DHT',
-        config: {
-          sensorType: 11,
-          pin: 17,
-          interval: 5000,
-        },
-      },
       os: {
         prettyName: 'System stats',
         config: {
           interval: 60000,
         },
       },
+      dht: {
+        prettyName: 'Humidity and Temperature',
+        config: {
+          sensorType: 11,
+          pin: 11,
+          interval: 5000,
+        },
+      },
+      // plant: {
+      //   prettyName: 'Plant water level',
+      //   config: {
+      //     pin: 12,
+      //     interval: 5000,
+      //   },
+      // },
     },
     // modules: [
     //   {

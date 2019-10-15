@@ -28,7 +28,7 @@ export const setup = ({
   interval,
 }) => {
   publish = publishFunction;
-  console.log(board);
+  console.log('board', board);
   const gpio = board.getGpioNumber(`P1-${pin}`);
   probeTimer = setInterval(execute.bind(this, sensorType, gpio), interval);
 };
