@@ -1,4 +1,4 @@
-import { board } from 'raspi-board';
+import { getGpioNumber } from 'raspi-board';
 import sensor from 'node-dht-sensor';
 
 let probeTimer;
@@ -28,8 +28,8 @@ export const setup = ({
   interval,
 }) => {
   publish = publishFunction;
-  console.log('board', board);
-  const gpio = board.getGpioNumber(`P1-${pin}`);
+  console.log('board');
+  const gpio = getGpioNumber(`P1-${pin}`);
   probeTimer = setInterval(execute.bind(this, sensorType, gpio), interval);
 };
 
