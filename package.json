@@ -36,14 +36,16 @@
     "tslint": "^5.20.0",
     "typescript": "^3.6.4",
     "typescript-eslint-parser": "^22.0.0",
-    "webpack": "^4.41.1",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2",
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "local-devices": "^2.0.0",
     "mqtt": "^3.0.0",
     "node-dht-sensor": "^0.3.0",
-    "os-utils": "0.0.14"
+    "os-utils": "0.0.14",
+    "raspi-board": "^7.3.0"
   }
 }
