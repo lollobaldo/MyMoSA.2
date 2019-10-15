@@ -18,6 +18,12 @@ const config = {
           interval: 60000,
         },
       },
+      people: {
+        prettyName: 'Flatmates presence',
+        config: {
+          interval: 5000,
+        },
+      },
       dht: {
         prettyName: 'Humidity and Temperature',
         config: {
