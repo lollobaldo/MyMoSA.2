@@ -3,9 +3,9 @@ import sensor from 'node-dht-sensor';
 let probeTimer;
 let publish;
 
-const execute = (pin) => {
+const execute = (sensorType, pin) => {
   console.log('Attempting a read');
-  sensor.read(11, pin, (err, temperature, humidity) => {
+  sensor.read(sensorType, pin, (err, temperature, humidity) => {
     if (!err) {
       const result = {
         temperature: temperature.toFixed(1),
@@ -20,9 +20,14 @@ const execute = (pin) => {
   });
 };
 
-export const setup = ({ publishFunction, interval, pin }) => {
+export const setup = ({
+  publishFunction,
+  sensorType,
+  pin,
+  interval,
+}) => {
   publish = publishFunction;
-  probeTimer = setInterval(execute.bind(this, pin), interval);
+  probeTimer = setInterval(execute.bind(this, sensorType, pin), interval);
 };
 
 export const onMessage = (topic, message) => {

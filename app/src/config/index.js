@@ -14,16 +14,17 @@ const config = {
       dht: {
         prettyName: 'DHT',
         config: {
+          sensorType: 11,
           pin: 17,
           interval: 5000,
         },
       },
-      // os: {
-      //   prettyName: 'System stats',
-      //   config: {
-      //     interval: 60000,
-      //   },
-      // },
+      os: {
+        prettyName: 'System stats',
+        config: {
+          interval: 60000,
+        },
+      },
     },
     // modules: [
     //   {
