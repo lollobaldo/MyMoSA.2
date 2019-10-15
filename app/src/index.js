@@ -17,9 +17,10 @@ const client = connect(server, credentials);
 
 const safePublish = (module, topic, message, options) => {
   const t = module + (topic ? '/' : '');
+  const m = (typeof message === 'string') ? message : JSON.stringify(message);
   console.log(t);
-  console.log(message);
-  client.publish(t, message, options);
+  console.log(m);
+  client.publish(t, m, options);
 };
 
 // Call setup for every module in config. Returns array of cleanup functions.

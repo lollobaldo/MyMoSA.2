@@ -11,7 +11,7 @@ const execute = (pin) => {
         humidity: humidity.toFixed(1),
       };
       console.log(result);
-      publish('', JSON.stringify(result), { qos: 2, retain: true });
+      publish('', result, { qos: 2, retain: true });
     }
   });
 };
