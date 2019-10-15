@@ -4,7 +4,8 @@ let probeTimer;
 let publish;
 
 const execute = (pin) => {
-  sensor.read(22, pin, (err, temperature, humidity) => {
+  console.log('Attempting a read');
+  sensor.read(11, pin, (err, temperature, humidity) => {
     if (!err) {
       const result = {
         temperature: temperature.toFixed(1),
