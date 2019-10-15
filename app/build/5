@@ -1,0 +1,47 @@
+exports.ids = [5];
+exports.modules = {
+
+/***/ 3:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setup", function() { return setup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cleanup", function() { return cleanup; });
+/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var os__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(os__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const stable = {
+  platform: os__WEBPACK_IMPORTED_MODULE_0___default.a.type(),
+  release: os__WEBPACK_IMPORTED_MODULE_0___default.a.release(),
+  cpuCount: os__WEBPACK_IMPORTED_MODULE_0___default.a.cpus().length,
+  memTotal: os__WEBPACK_IMPORTED_MODULE_0___default.a.totalmem(),
+};
+
+const probe = () => ({
+  memFree: os__WEBPACK_IMPORTED_MODULE_0___default.a.freemem(),
+  cpuFree: os__WEBPACK_IMPORTED_MODULE_0___default.a.cpuFree(),
+  cpuAver: os__WEBPACK_IMPORTED_MODULE_0___default.a.loadavg(1),
+});
+
+const execute = () => {
+  console.log(Object.assign({}, stable, probe()));
+};
+
+let probeTimer;
+
+const setup = () => {
+  probeTimer = setInterval(execute, 1000);
+};
+
+const cleanup = () => {
+  clearInterval(probeTimer);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (setup);
+
+
+/***/ })
+
+};;

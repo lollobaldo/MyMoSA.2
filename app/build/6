@@ -1,0 +1,41 @@
+exports.ids = [6,3];
+exports.modules = {
+
+/***/ 4:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setup", function() { return setup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onMessage", function() { return onMessage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cleanup", function() { return cleanup; });
+let probeTimer;
+let publish;
+
+const execute = (pin) => {
+  console.log(`Executing probe on pin ${pin}`);
+  publish('', 'ciaone123', { qos: 2, retain: true });
+  // publish('ciaoo');
+};
+
+const setup = ({ publishFunction, interval, pin }) => {
+  publish = publishFunction;
+  console.log(publish);
+  probeTimer = setInterval(execute.bind(undefined, pin), interval);
+};
+
+const onMessage = ({ topic, message }) => {
+  console.log(`Received new message on topic ${topic}: ${message}`);
+};
+
+const cleanup = () => {
+  clearInterval(probeTimer);
+  console.log('cleaned up');
+};
+
+// export default setup;
+
+
+/***/ })
+
+};;

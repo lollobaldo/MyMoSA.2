@@ -1,0 +1,49 @@
+{
+  "name": "mymosa.2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node webpack-dev-server",
+    "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development --watch",
+    "lint": "eslint",
+    "start": "node ./app/build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lollobaldo/MyMoSA.2.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lollobaldo/MyMoSA.2/issues"
+  },
+  "homepage": "https://github.com/lollobaldo/MyMoSA.2#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.18.2",
+    "glob": "^7.1.4",
+    "shebang-loader": "0.0.1",
+    "ts-loader": "^6.2.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4",
+    "typescript-eslint-parser": "^22.0.0",
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "mqtt": "^3.0.0",
+    "node-dht-sensor": "^0.3.0",
+    "os-utils": "0.0.14"
+  }
+}

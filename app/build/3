@@ -1,0 +1,30 @@
+exports.ids = [3];
+exports.modules = {
+
+/***/ 2:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setup", function() { return setup; });
+/* harmony import */ var node_dht_sensor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var node_dht_sensor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(node_dht_sensor__WEBPACK_IMPORTED_MODULE_0__);
+
+
+node_dht_sensor__WEBPACK_IMPORTED_MODULE_0___default.a.read(22, 4, (err, temperature, humidity) => {
+  if (!err) {
+    console.log(`temp: ${temperature.toFixed(1)} °C,
+      humidity: ${humidity.toFixed(1)} %`);
+  }
+});
+
+const setup = () => {
+  console.log('dht setup');
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (setup);
+
+
+/***/ })
+
+};;
