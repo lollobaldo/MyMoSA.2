@@ -13,7 +13,7 @@ const stable = {
 
 const probe = () => ({
   memFree: os.freemem(),
-  cpuFree: os.cpuFree(),
+  // cpuFree: os.cpuFree(),
   cpuAver: os.loadavg(1),
 });
 
