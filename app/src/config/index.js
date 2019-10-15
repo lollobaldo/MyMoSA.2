@@ -4,13 +4,13 @@ import mqttCredentials from './credentials';
 const config = {
   global: {
     modules: {
-      template: {
-        prettyName: 'Template module',
-        config: {
-          interval: 5000,
-          pin: 600,
-        },
-      },
+      // template: {
+      //   prettyName: 'Template module',
+      //   config: {
+      //     interval: 5000,
+      //     pin: 600,
+      //   },
+      // },
       dht: {
         prettyName: 'DHT',
         config: {
