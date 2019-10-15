@@ -18,12 +18,12 @@ const config = {
           interval: 5000,
         },
       },
-      os: {
-        prettyName: 'System stats',
-        config: {
-          interval: 5000,
-        },
-      },
+      // os: {
+      //   prettyName: 'System stats',
+      //   config: {
+      //     interval: 60000,
+      //   },
+      // },
     },
     // modules: [
     //   {

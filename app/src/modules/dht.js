@@ -12,6 +12,9 @@ const execute = (pin) => {
       };
       console.log(result);
       publish('', result, { qos: 2, retain: true });
+    } else {
+      console.log(err);
+      console.log('Error incurred, see details above');
     }
   });
 };
