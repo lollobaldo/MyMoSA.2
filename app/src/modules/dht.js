@@ -21,7 +21,7 @@ export const setup = ({ publishFunction, interval, pin }) => {
   probeTimer = setInterval(execute.bind(this, pin), interval);
 };
 
-export const onMessage = ({ topic, message }) => {
+export const onMessage = (topic, message) => {
   console.log(`Received new message on topic ${topic}: ${message}`);
 };
 

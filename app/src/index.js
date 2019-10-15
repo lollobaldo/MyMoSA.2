@@ -18,8 +18,6 @@ const client = connect(server, credentials);
 const safePublish = (module, topic, message, options) => {
   const t = module + (topic ? '/' : '');
   const m = (typeof message === 'string') ? message : JSON.stringify(message);
-  console.log(t);
-  console.log(m);
   client.publish(t, m, options);
 };
 
@@ -65,6 +63,7 @@ client.on('connect', () => {
 
 client.on('message', (topic, message) => {
   console.log(`New message on topic ${topic}: ${message.toString()}`);
+  modules[topic].callbacks.onMessage(topic, message);
 });
 
 process.on('exit', (code) => {
