@@ -1,4 +1,4 @@
-import board from 'raspi-board';
+import * as board from 'raspi-board';
 import sensor from 'node-dht-sensor';
 
 let probeTimer;
