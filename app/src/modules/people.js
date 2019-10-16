@@ -1,11 +1,47 @@
 import find from 'local-devices';
+import dayjs from 'dayjs';
+import advancedFormat from 'dayjs/plugin/customParseFormat';
 
 let probeTimer;
 let publish;
 
+const inHouse = {
+  jack: false,
+  lorenzo: false,
+  marco: false,
+  vittorio: false,
+  will: false,
+};
+
+const nameToMate = (name) => {
+  switch (name) {
+    case 'Galaxy-J5':
+      return 'lorenzo';
+    case 'marcos-iPhone.home':
+      return 'marco';
+    case 'WillKempsiPhone.home':
+      return 'will';
+    default:
+      return false;
+  }
+};
+
 const execute = () => {
   find().then((devices) => {
     console.log(devices);
+    const people = devices
+      .map(({ name }) => nameToMate(name))
+      .filter(name => !!name);
+    Object.keys(inHouse).foreach((p) => {
+      if (inHouse[p] !== people.contains(p)) {
+        inHouse[p] = !inHouse[p];
+        console.log(
+          `${p}
+          ${inHouse[p] ? 'arrived in' : 'left'}
+          the house at ${dayjs().format('hh:mm')}`,
+        );
+      }
+    });
     // publish('', probe(), { qos: 2, retain: true });
   }).catch((e) => {
     console.warn(e);

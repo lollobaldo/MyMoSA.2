@@ -42,6 +42,8 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "date-fns": "^2.4.1",
+    "dayjs": "^1.8.16",
     "local-devices": "^2.0.0",
     "mqtt": "^3.0.0",
     "node-dht-sensor": "^0.3.0",
