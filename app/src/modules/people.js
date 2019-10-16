@@ -32,7 +32,7 @@ const execute = () => {
       .map(({ name }) => nameToMate(name))
       .filter(name => !!name);
     Object.keys(inHouse).forEach((p) => {
-      if (inHouse[p] !== people.contains(p)) {
+      if (inHouse[p] !== people.includes(p)) {
         inHouse[p] = !inHouse[p];
         console.log(
           `${p}
