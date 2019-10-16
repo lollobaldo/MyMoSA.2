@@ -1,6 +1,5 @@
 import find from 'local-devices';
 import dayjs from 'dayjs';
-import advancedFormat from 'dayjs/plugin/customParseFormat';
 
 let probeTimer;
 let publish;
