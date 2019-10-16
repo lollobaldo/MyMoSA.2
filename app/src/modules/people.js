@@ -31,13 +31,13 @@ const execute = () => {
     const people = devices
       .map(({ name }) => nameToMate(name))
       .filter(name => !!name);
+    console.log(people);
+    console.log(inHouse);
     Object.keys(inHouse).forEach((p) => {
       if (inHouse[p] !== people.includes(p)) {
         inHouse[p] = !inHouse[p];
         console.log(
-          `${p}
-          ${inHouse[p] ? 'arrived in' : 'left'}
-          the house at ${dayjs().format('hh:mm')}`,
+          `${p} ${inHouse[p] ? 'arrived in' : 'left'} the house at ${dayjs().format('hh:mm')}`,
         );
       }
     });
@@ -54,7 +54,7 @@ export const setup = ({ publishFunction, interval }) => {
 };
 
 export const onMessage = (topic, message) => {
-  console.log(`Received new message on topic ${topic}: ${message}`);
+  // console.log(`Received new message on topic ${topic}: ${message}`);
 };
 
 export const cleanup = () => {

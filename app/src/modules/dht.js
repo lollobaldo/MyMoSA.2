@@ -5,7 +5,7 @@ let probeTimer;
 let publish;
 
 const execute = (sensorType, pin) => {
-  console.log('Attempting a read');
+  // console.log('Attempting a read');
   sensor.read(sensorType, pin, (err, temperature, humidity) => {
     if (!err) {
       const result = {
@@ -34,7 +34,7 @@ export const setup = ({
 };
 
 export const onMessage = (topic, message) => {
-  console.log(`Received new message on topic ${topic}: ${message}`);
+  // console.log(`Received new message on topic ${topic}: ${message}`);
 };
 
 export const cleanup = () => {

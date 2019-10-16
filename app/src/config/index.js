@@ -12,26 +12,26 @@ const config = {
       //     pin: 600,
       //   },
       // },
-      os: {
-        prettyName: 'System stats',
-        config: {
-          interval: 60000,
-        },
-      },
+      // os: {
+      //   prettyName: 'System stats',
+      //   config: {
+      //     interval: 60000,
+      //   },
+      // },
       people: {
         prettyName: 'Flatmates presence',
         config: {
           interval: 5000,
         },
       },
-      dht: {
-        prettyName: 'Humidity and Temperature',
-        config: {
-          sensorType: 11,
-          pin: 11,
-          interval: 5000,
-        },
-      },
+      // dht: {
+      //   prettyName: 'Humidity and Temperature',
+      //   config: {
+      //     sensorType: 11,
+      //     pin: 11,
+      //     interval: 5000,
+      //   },
+      // },
       // plant: {
       //   prettyName: 'Plant water level',
       //   config: {
