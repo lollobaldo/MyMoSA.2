@@ -18,6 +18,8 @@ const nameToMate = (name) => {
       return 'lorenzo';
     case 'marcos-iPhone.home':
       return 'marco';
+    case 'VittoriosiPhone.home':
+      return 'vittorio';
     case 'WillKempsiPhone.home':
       return 'will';
     default:
@@ -38,9 +40,11 @@ const execute = () => {
     Object.keys(inHouse).forEach((p) => {
       if (inHouse[p] !== people.includes(p)) {
         inHouse[p] = !inHouse[p];
+        const time = dayjs().format('hh:mm');
         console.log(
-          `${p} ${inHouse[p] ? 'arrived in' : 'left'} the house at ${dayjs().format('hh:mm')}`,
+          `${p} ${inHouse[p] ? 'arrived in' : 'left'} the house at ${time}`,
         );
+        publish(p, `${inHouse[p] ? 'IN' : 'OUT'} at ${time}`);
       }
     });
     // publish('', probe(), { qos: 2, retain: true });
