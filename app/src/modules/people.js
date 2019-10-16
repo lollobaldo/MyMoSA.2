@@ -31,6 +31,7 @@ const execute = () => {
     const people = devices
       .map(({ name }) => nameToMate(name))
       .filter(name => !!name);
+    console.log(devices.map(({ name }) => name));
     console.log(devices.map(({ name }) => nameToMate(name)));
     console.log(people);
     console.log(inHouse);
