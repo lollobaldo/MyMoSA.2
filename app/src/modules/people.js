@@ -14,7 +14,7 @@ const inHouse = {
 
 const nameToMate = (name) => {
   switch (name) {
-    case 'Galaxy-J5':
+    case 'Galaxy-J5.home':
       return 'lorenzo';
     case 'marcos-iPhone.home':
       return 'marco';
@@ -31,10 +31,10 @@ const execute = () => {
     const people = devices
       .map(({ name }) => nameToMate(name))
       .filter(name => !!name);
-    console.log(devices.map(({ name }) => name));
-    console.log(devices.map(({ name }) => nameToMate(name)));
-    console.log(people);
-    console.log(inHouse);
+    // console.log(devices.map(({ name }) => name));
+    // console.log(devices.map(({ name }) => nameToMate(name)));
+    // console.log(people);
+    // console.log(inHouse);
     Object.keys(inHouse).forEach((p) => {
       if (inHouse[p] !== people.includes(p)) {
         inHouse[p] = !inHouse[p];
