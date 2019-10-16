@@ -21,7 +21,7 @@ const config = {
       people: {
         prettyName: 'Flatmates presence',
         config: {
-          interval: 5000,
+          interval: 30000,
         },
       },
       // dht: {
