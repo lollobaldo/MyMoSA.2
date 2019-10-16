@@ -27,11 +27,11 @@ const nameToMate = (name) => {
 
 const execute = () => {
   find().then((devices) => {
-    console.log(devices);
+    // console.log(devices);
     const people = devices
       .map(({ name }) => nameToMate(name))
       .filter(name => !!name);
-    Object.keys(inHouse).foreach((p) => {
+    Object.keys(inHouse).forEach((p) => {
       if (inHouse[p] !== people.contains(p)) {
         inHouse[p] = !inHouse[p];
         console.log(
